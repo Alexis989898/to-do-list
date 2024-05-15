@@ -1,0 +1,18 @@
+html, body {
+    margin: 0;
+}
+
+body {
+    display: flex;
+}
+
+.sidebar {
+    height: 100vh;
+    flex: 1;
+    background-color: aqua;
+}
+
+.main {
+    flex: 3;
+    background-color: brown;
+}
