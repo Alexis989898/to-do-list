@@ -107,7 +107,7 @@ body {
     padding: 0;
     justify-content: space-between;
     align-items: center;
-    border-left: solid 1px #ffffff;
+    border-left: solid 1px var(--text);
 }
 
 .main-list-section {
@@ -125,11 +125,11 @@ body {
 .task-list {
     width: 100%;
     max-width: calc(100% - 80px);
+    max-height: 350px;
     padding: 40px;
     overflow: auto;
-    /*border-top: solid 1px var(--text);
-    border-bottom: solid 1px var(--text);
-    */
+    border-top: 1px solid var(--text);
+    border-bottom: 1px solid var(--text);
 }
 
 .btn-add-task {
