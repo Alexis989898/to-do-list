@@ -72,6 +72,10 @@ body {
 }
 
 .sidebar-lists-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding-top: 40px;
     overflow: auto;
@@ -90,13 +94,21 @@ body {
 
 .sidebar-item {
     background-color: var(--background);
-    width: 100%;
+    width: calc(100% - 40px);
     height: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
+.list-icon-btn {
+    display: flex;
+    height: 40px;
+}
+
 
 /*Main CSS*/
 
@@ -147,6 +159,18 @@ body {
     gap: 20px;
 }
 
+.task.task-priority-low .task-name {
+    color: lightgreen !important; /* Low priority color */
+}
+
+.task.task-priority-medium .task-name {
+    color: yellow !important; /* Medium priority color */
+}
+
+.task.task-priority-high .task-name {
+    color: salmon !important; /* High priority color */
+}
+
 .task-name {
     margin-right: auto;
 }
@@ -155,19 +179,21 @@ body {
 
 .task-btn-info {
     border-radius: 10px;
-    height: 40px;
-    background-color: var(--azure);
+    height: 100%;
 }
 
 .task-btn-delete {
     border-radius: 10px;
-    height: 40px;
-    background-color: red;
+    height: 100%;
 }
 
 .icon-btn {
     max-width: 100%;
     height: 100%;
+}
+
+.icon-btn:hover {
+    cursor: pointer;
 }
 
 /* Modals CSS */
@@ -178,7 +204,7 @@ input {
     height: 10%;
 }
 
-#modal-add-list, #modal-add-task {
+#modal-add-list, #modal-add-task, #modal-edit-task {
     width: 350px;
     position: absolute;
     inset: 0;
@@ -202,11 +228,16 @@ input {
     justify-content: space-between;
 }
 
-#btn-submit-task {
+#btn-submit-task, #btn-edit-task {
     height: 20%;
     margin-top: 20px;
 }
 
 .radio-label {
     width: 60px;
+}
+
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
 }
