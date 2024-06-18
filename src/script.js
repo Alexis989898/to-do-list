@@ -1,21 +1,25 @@
-// Add Task vars
-const addTaskBtn = document.getElementById("btn-add-task");
-const modalAddTask = document.getElementById("modal-add-task");
-const submitTaskBtn = document.getElementById("btn-submit-task");
-const addTaskForm = document.getElementById("add-task-form");
+import './style.css';
 
-// Add List vars
-const addListBtn = document.getElementById("btn-add-list");
-const modalAddList = document.getElementById("modal-add-list");
-const submitListBtn = document.getElementById("btn-submit-list");
-const addListForm = document.getElementById("add-list-form");
+window.addEventListener("DOMContentLoaded", (event) => {
+    // Add Task vars
+    const addTaskBtn = document.getElementById("btn-add-task");
+    console.log(addTaskBtn);
+    const modalAddTask = document.getElementById("modal-add-task");
+    const submitTaskBtn = document.getElementById("btn-submit-task");
+    const addTaskForm = document.getElementById("add-task-form");
 
-// Edit task vars
-const editTaskBtn = document.getElementById("btn-edit-task");
-const modalEditTask = document.getElementById("modal-edit-task");
-const editTaskForm = document.getElementById("edit-task-form");
+    // Add List vars
+    const addListBtn = document.getElementById("btn-add-list");
+    const modalAddList = document.getElementById("modal-add-list");
+    const submitListBtn = document.getElementById("btn-submit-list");
+    const addListForm = document.getElementById("add-list-form");
 
-const body = document.body;
+    // Edit task vars
+    const editTaskBtn = document.getElementById("btn-edit-task");
+    const modalEditTask = document.getElementById("modal-edit-task");
+    const editTaskForm = document.getElementById("edit-task-form");
+
+    const body = document.body;
 
 window.onload = function () {
     loadAllTasks();
@@ -48,6 +52,22 @@ function loadAllTasks() {
         }
     });
 }
+
+// Submitting forms event listeners
+addListForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    submitList();
+});
+
+addTaskForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    submitTask();
+});
+
+editTaskForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    submitEditedTask();
+});
 
 // Creates a task div
 function createTaskElement(task) {
@@ -295,11 +315,11 @@ function submitEditedTask() {
 
     let tasks = JSON.parse(localStorage.getItem(list)) || [];
     const originalTaskName = document.querySelector("input[name='original-task-name']").value;
-    
+
     // Check for duplicates excluding the original name
     if (hasDuplicateName(tasks.filter(task => task.name !== originalTaskName), taskName)) {
-      alert("Error: Task name already exists!");
-      return; // Prevent update if duplicate is found
+        alert("Error: Task name already exists!");
+        return; // Prevent update if duplicate is found
     }
 
     const taskIndex = tasks.findIndex(task => task.name === originalTaskName);
@@ -320,3 +340,5 @@ function submitEditedTask() {
 function hasDuplicateName(tasks, name) {
     return tasks.some(task => task.name.toLowerCase() === name.toLowerCase()); // Case-insensitive check
 }
+
+});
