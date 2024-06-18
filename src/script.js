@@ -1,4 +1,6 @@
 import './style.css';
+import infoIcon from '../imgs/info-icon.png';
+import deleteIcon from '../imgs/delete-icon.png';
 
 window.addEventListener("DOMContentLoaded", (event) => {
     // Add Task vars
@@ -86,7 +88,7 @@ function createTaskElement(task) {
     taskBtnInfoDiv.className = "task-btn-info";
     const infoImg = document.createElement("img");
     infoImg.className = "icon-btn";
-    infoImg.src = "../imgs/info-icon.png";
+    infoImg.src = infoIcon;
     infoImg.alt = "info button";
     infoImg.addEventListener("click", function (e) {
         editTask(e, task);
@@ -98,7 +100,7 @@ function createTaskElement(task) {
 
     const deleteImg = document.createElement("img");
     deleteImg.className = "icon-btn";
-    deleteImg.src = "../imgs/delete-icon.png";
+    deleteImg.src = deleteIcon;
     deleteImg.alt = "delete button";
     deleteImg.addEventListener("click", function () {
         deleteTask(task.name, task.listName);

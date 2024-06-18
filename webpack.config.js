@@ -22,13 +22,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpg|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'imgs/', // Adjust the output path as needed
+              outputPath: 'imgs/', // output path in dist folder
             },
           },
         ],
