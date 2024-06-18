@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default</title>
+<script defer src="main.js"></script></head>
+
+<body>
+    <div class="sidebar main-divs-default">
+        <div class="sidebar-lists-wrapper">
+            <div class="sidebar-item sidebar-all-tasks" onclick="loadAllTasks();">All Tasks</div>
+        </div>
+        <div class="btn-add-wrapper">
+            <button id="btn-add-list" class="btn-add">Add list</button>
+        </div>
+
+        <dialog id="modal-add-list">
+            <form id="add-list-form">
+                <div class="input-wrapper">
+                    <label>List Name: </label>
+                    <input type="text" class="form-list-name" required>
+                </div>
+                <button type="submit" class="btn-add" id="btn-submit-list">+</button>
+            </form>
+        </dialog>
+    </div>
+
+    <div class="main main-divs-default">
+        <div class="main-list-section">
+            <div class="main-list-title"></div>
+            <div class="task-list">
+            </div>
+        </div>
+        <div class="btn-add-wrapper">
+            <button id="btn-add-task" class="btn-add">Add task</button>
+        </div>
+
+        <dialog id="modal-add-task">
+            <form id="add-task-form">
+                <div class="input-wrapper">
+                    <label>Task Name: </label>
+                    <input class="form-task-name" type="text" required>
+                </div>
+                <div class="input-wrapper">
+                    <label>Description: </label>
+                    <input class="form-task-description" type="text">
+                </div>
+                <div class="input-wrapper">
+                    <label>Due date: </label>
+                    <input class="form-task-date" type="date">
+                </div>
+                <div>Priority</div>
+                <div class="radio-wrapper">
+                    <input type="radio" name="priority" value="low" required>
+                    <label class="radio-label">Low</label>
+                </div>
+                <div class="radio-wrapper">
+                    <input type="radio" name="priority" value="medium">
+                    <label class="radio-label">Medium</label>
+                </div>
+                <div class="radio-wrapper">
+                    <input type="radio" name="priority" value="high">
+                    <label class="radio-label">High</label>
+                </div>
+                <button type="submit" class="btn-add" id="btn-submit-task">+</button>
+            </form>
+        </dialog>
+        <dialog id="modal-edit-task">
+            <form id="edit-task-form">
+                <div class="input-wrapper">
+                    <label>Task Name: </label>
+                    <input class="form-edit-task-name" type="text" required>
+                </div>
+                <div class="input-wrapper">
+                    <label>Description: </label>
+                    <input class="form-edit-task-description" type="text">
+                </div>
+                <div class="input-wrapper">
+                    <label>Due date: </label>
+                    <input class="form-edit-task-date" type="date">
+                </div>
+                <div>Priority</div>
+                <div class="radio-wrapper">
+                    <input class="radio-edit-low" type="radio" name="priority-edit" value="low" required>
+                    <label class="radio-label">Low</label>
+                </div>
+                <div class="radio-wrapper">
+                    <input class="radio-edit-medium" type="radio" name="priority-edit" value="medium">
+                    <label class="radio-label">Medium</label>
+                </div>
+                <div class="radio-wrapper">
+                    <input class="radio-edit-high" type="radio" name="priority-edit" value="high">
+                    <label class="radio-label">High</label>
+                </div>
+                <button type="submit" class="btn-add" id="btn-edit-task">✔</button>
+                <input type="hidden" name="original-task-name" value="">
+                <input type="hidden" name="task-list" value="">
+            </form>
+        </dialog>
+    </div>
+</body>
+
+</html>
