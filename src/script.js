@@ -144,7 +144,7 @@ function loadLists() {
 
         const deleteImg = document.createElement("img");
         deleteImg.className = "list-icon-btn";
-        deleteImg.src = "../imgs/delete-icon.png";
+        deleteImg.src = deleteIcon;
         deleteImg.alt = "delete button";
 
         deleteBtn.appendChild(deleteImg);
